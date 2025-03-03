@@ -44,6 +44,10 @@ img{
     position: relative;
 }
 
+.small-screen-visible, .medium-screen{
+    display: none;
+}
+
 .name-on-image{
     position: absolute;
     left:50%;
@@ -143,14 +147,14 @@ footer .action-menu{
     gap: 10px;
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:440px) {
     img{
         width: 220px;
         aspect-ratio: 1/1.25;
         box-shadow: 1px 1px 10px grey;
     }
 
-    header .about-me {
+    header .about-me , .medium-screen {
         display: none;
     }
 
@@ -170,31 +174,51 @@ footer .action-menu{
     }
 }
 
-@media screen and (max-width:900px) {
-    img{
-        width: 220px;
-        aspect-ratio: 1/1.25;
-        box-shadow: 1px 1px 10px grey;
+
+
+@media screen and (min-width: 440px) and (max-width:900px) {
+    
+    .medium-screen{
+        display: block;
+        padding-top: 100px;
     }
 
-    header .about-me {
+    .medium-screen-about-me{
+        width: 400px;
+        background-color: white;
+        height: 300px;
+        border: 1px solid grey;
+        box-shadow: 1px 1px 10px grey;
+        padding: 20px;
+    }
+
+    header .content ,.small-screen-visible{
         display: none;
     }
 
-    .small-screen-visible{
-        display: flex;
-        justify-content: center;
-        border: 0px;
+    .medium-screen-about-me img{
+        position: relative;
+        float: left;
+        transform: translate(-20%,-40%);
+        -webkit-transform: translate(-20%,-40%);
+        -moz-transform: translate(-20%,-40%);
+        -ms-transform: translate(-20%,-40%);
+        -o-transform: translate(-20%,-40%);
+}
+
+    .medium-screen-about-me p{
+        display: inline;
     }
 
-    .small-screen-visible .about-me-small{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 0px none white;
-        width: 100%;
-    }
+    .name-on-image{
+        color: white;
+        font-size: xx-large;
+        transform: translate(-40%,-200%);
+        -webkit-transform: translate(-40%,-200%);
+        -moz-transform: translate(-40%,-200%);
+        -ms-transform: translate(-40%,-200%);
+        -o-transform: translate(-40%,-200%);
+}
 }
 
 
